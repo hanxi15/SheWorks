@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donner un Feedback</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Donner un Feedback</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Accueil</a>
+            <a href="{{ url_for('statistics') }}">Statistiques</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Votre avis compte !</h2>
+            <!-- Le formulaire soumet les données à la route 'feedback' -->
+            <form action="{{ url_for('feedback') }}" method="POST">
+                <label for="feedback">Votre Feedback :</label>
+                <textarea id="feedback" name="feedback" rows="5" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

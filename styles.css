@@ -1,0 +1,191 @@
+/* Global */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/LES FEMMES.avif') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+header {
+    background-color: #ff6f91; /* Couleur rose */
+    color: white;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #ff6f91;
+    border-color: white;
+    border-radius: 5px;
+}
+
+main {
+    padding: 2em;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+section h2 {
+    color: #ff6f91;
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #ff6f91;
+    padding-bottom: 0.3em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #555;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fdfdfd;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border 0.3s ease;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    border-color: #ff6f91;
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    background-color: #ff6f91;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4d71;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ff6f91;
+    color: white;
+    text-align: center;
+    padding: 0.8em 0;
+    font-size: 0.9em;
+    border-top: 3px solid #ff4d71;
+}
+
+/* Tableau - Modernisé */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 1em;
+    text-align: left;
+    font-size: 1em;
+    color: #333;
+}
+
+th {
+    background-color: #ff6f91;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 10px 10px 0 0;
+}
+
+td {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #ffeff4;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: #f1f1f1;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+/* Améliorations au survol */
+tbody tr:hover td {
+    background-color: #ff6f91;
+    color: white;
+}
+
+/* Réactivité - Table */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 0.8em;
+    }
+
+    table thead {
+        font-size: 1em;
+    }
+
+    td {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+

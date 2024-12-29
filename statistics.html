@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Statistiques des Femmes au Travail</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Accueil</a>
+            <a href="{{ url_for('feedback') }}">Donner un Feedback</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Filtrer les Données</h2>
+            <form action="{{ url_for('statistics') }}" method="POST">
+                <label for="region">Région :</label>
+                <select id="region" name="region">
+                    <option value="all" {% if selected_region == 'all' %}selected{% endif %}>Toutes</option>
+                    {% for region in regions %}
+                        <option value="{{ region }}" {% if selected_region == region %}selected{% endif %}>{{ region }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="year">Année :</label>
+                <select id="year" name="year">
+                    {% for year in years %}
+                        <option value="{{ year }}" {% if selected_year == year %}selected{% endif %}>{{ year }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">Appliquer</button>
+            </form>
+        </section>
+
+        <section id="chart-container">
+            <h3>Statistiques</h3>
+            {% if stats %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Classification</th>
+                        <th>Secteur</th>
+                        <th>Année</th>
+                        <th>Valeur Observée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stat in stats %}
+                        <tr>
+                            <td>{{ stat[0] }}</td>
+                            <td>{{ stat[1] }}</td>
+                            <td>{{ stat[2] }}</td>
+                            <td>{{ stat[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <p>Aucune donnée disponible pour les critères sélectionnés.</p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>
